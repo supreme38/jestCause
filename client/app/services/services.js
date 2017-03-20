@@ -99,7 +99,6 @@ angular.module('hang.services', [])
 				}
 			})
 			.then((resp) => {
-				console.log(resp)
 				return resp.data
 			});
 		}

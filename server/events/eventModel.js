@@ -43,6 +43,16 @@ module.exports = {
 				console.error(err);
 			})
 		});
+	},
+
+	deleteEvent: function(info, callback) {
+		console.log('****************', info.user_id)
+		db('event_id').from('user_events').where('user_id', info)
+		.then(function(info) {
+			callback(info)
+		}).catch(function(err) {
+			console.error(err);
+		})
 	}
 }
 

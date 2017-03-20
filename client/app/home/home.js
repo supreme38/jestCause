@@ -1,6 +1,5 @@
 angular.module('hang.home', [])
 	.controller('HomeController', function ($scope, Users, $mdPanel, $location, $mdDialog, $route, Auth, Events) {
-
 		$scope.eventGuests = [];
 		$scope.currentNavItem = "hang";
 		$scope.getCurrentUser = Users.getCurrentUser;
@@ -48,6 +47,19 @@ angular.module('hang.home', [])
 
 		$scope.toHome = function() {
 			$location.path('/home');
+		}
+
+		$scope.goTo = function(ev, info) {
+		console.log(info);
+		var confirm = $mdDialog.confirm()
+			.title('Are you attending?')
+			.targetEvent(ev)
+			.ok('Yes')
+			.cancel('No');
+
+		$mdDialog.show(confirm).then(function () {
+			$scope.status = 'You decided to get rid of your debt.';
+		})
 		}
 
 		$scope.toEvent = function (ev) {
