@@ -33,7 +33,7 @@ module.exports = {
 	createEvent: function(req, res, next) {
 		let {where, when, description, guests, email} = req.body;
 		console.log('guests: ', guests)
-		// guests = guests.toString();
+		guests = guests.toString();
 		console.log('here are the guests: ', guests)
 
 

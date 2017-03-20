@@ -56,10 +56,6 @@ angular.module('hang.home', [])
 			.targetEvent(ev)
 			.ok('Yes')
 			.cancel('No');
-
-		$mdDialog.show(confirm).then(function () {
-			$scope.status = 'You decided to get rid of your debt.';
-		})
 		}
 
 		$scope.toEvent = function (ev) {
