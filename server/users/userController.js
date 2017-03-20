@@ -48,7 +48,6 @@ module.exports = {
 				}
 			})
 			.then(function () {
-				console.log(",,,,,,,,,,,,,,,,,,,", req.body.email)
 				var token = jwt.encode(user1, 'secret');
 				res.json({
 					token: token
