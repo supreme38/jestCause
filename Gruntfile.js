@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -22,9 +22,12 @@ module.exports = function (grunt) {
         presets: ['babel-preset-es2015']
       },
       dist: {
-        files: {
-          'build/js/complied.scripts.js': 'build/js/scripts.js'
-        }
+        files: [{
+          expand: true,
+          cwd: 'client/',
+          src: ['**/*.js'],
+          dest: 'build/'
+        }]
       }
     },
 
@@ -34,16 +37,33 @@ module.exports = function (grunt) {
 
     uglify: {
       target: {
-        files: {
-          'deploy/scripts.min.js': ['build/js/complied.scripts.js']
-        }
+        files: [{
+          expand: true,
+          cwd: 'build/app',
+          src: '**/*.js',
+          dest: 'deploy/client/app/'
+        }]
+      }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: [{
+          expand: true,
+          src: ['client/**/*.html', '*.html'],
+          dest: 'deploy'
+        }]
       }
     },
 
     cssmin: {
       target: {
         files: {
-          'deploy/styles.min.css': ['build/css/styles.css']
+          'deploy/client/styles/styles.css': ['build/css/styles.css']
         }
       }
     },
@@ -55,7 +75,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: ['client/styles/**/*.css'],
-        tasks: ['concat', 'babel', 'cssmin'],
+        tasks: ['concat', 'cssmin'],
       },
     },
 
@@ -74,8 +94,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
   grunt.registerTask('start', ['nodemon']);
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('build', ['jshint', 'concat', 'babel', 'uglify', 'cssmin']);
+  grunt.registerTask('build', ['babel', 'uglify', 'cssmin', 'htmlmin']);
 }

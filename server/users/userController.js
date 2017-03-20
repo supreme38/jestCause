@@ -31,27 +31,17 @@ module.exports = {
 	},
 
 	signup: function (req, res, next) {
-		var user1;
-
 		console.log('signing up with: ', req.body)
 		db.select().from('users')
 			.where('email', req.body.email)
 			.then(function (user) {
-				user1 = user
-				console.log('found user: ', user)
 				if (user.length) {
 					next(new Error('User already exists!'));
 				} else {
 					User.signup(req.body, (err, response) => {
-						return response
+						res.json({token: response});
 					})
 				}
-			})
-			.then(function () {
-				var token = jwt.encode(user1, 'secret');
-				res.json({
-					token: token
-				});
 			})
 	},
 

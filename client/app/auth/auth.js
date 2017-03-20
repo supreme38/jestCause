@@ -22,7 +22,7 @@ angular.module('hang.auth', [])
 			Auth.signup($scope.user)
 				.then(function (token) {
 					$window.localStorage.setItem('com.hang', token);
-					Users.saveUser($scope.user);
+					Users.saveUser(token);
 					$location.path('/home');
 				})
 				.catch(function (error) {

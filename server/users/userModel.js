@@ -1,6 +1,7 @@
 var db = require('../config/config.js');
 var bcrypt = require('bcrypt-nodejs');
 var helpers = require('../config/helpers.js');
+var jwt = require('jwt-simple');
 
 
 
@@ -35,7 +36,11 @@ module.exports = {
 				password: result,
 				profile_url: user.profile_url
 			}).then((inserted) => {
-				callback(null, inserted);
+				db.select().from('users').where('email', user.email)
+				.then(newUser => {
+					var token = jwt.encode(newUser, 'secret');
+					callback(null, token); 
+				})
 			}).catch((err) => {
 				callback(err);
 			});

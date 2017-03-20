@@ -32,8 +32,8 @@ module.exports = {
 
 	createEvent: function(req, res, next) {
 		let {where, when, description, guests, email} = req.body;
+		console.log('whole request: ', req.body)
 		console.log('guests: ', guests)
-		guests = guests.toString();
 		console.log('here are the guests: ', guests)
 
 
@@ -53,10 +53,5 @@ module.exports = {
 				next(new Error('problem saving event'));
 			}
 		})
-	},
-
-	deleteEvent: function(req, res, next) {
-		// console.log(req.body)
-		res.send(req.body)
 	}
 }
