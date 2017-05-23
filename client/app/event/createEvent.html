@@ -1,0 +1,56 @@
+<div style="text-align: center" class="md-inline-form" ng-cloak layout="column">
+	<h2>Create Event</h2>
+	<md-content layout="column" class="md-padding">
+		<div layout="column" layout-align="center center">
+			<md-input-container>
+				<label>Description</label>
+				<input ng-model="event.description">
+			</md-input-container>
+			<md-input-container>
+				<label>Where</label>
+				<input ng-model="event.where">
+			</md-input-container>
+
+			<md-input-container>
+				<label>When</label>
+				<input ng-model="event.when">
+			</md-input-container>
+			<label>Guests</label>
+			<md-list-item layout="column">
+				<div class="createGuestList" ng-repeat="guest in eventGuests">
+				<p>{{guest}}</p>
+				</div>
+			</md-list-item>
+			<md-button ng-click="createEvent(); this.close()">Create</md-button>
+		</div>
+	</md-content>
+</div>
+
+<!-- <div style="text-align: center" class="md-inline-form" ng-cloak layout="column">	
+<h2>Create Event</h2>
+	<md-content layout="column" class="md-padding">
+	<div layout="column" layout-align ="center center">
+		<md-input-container>
+			<label>Description</label>
+			<input ng-model="description">
+		</md-input-container>
+
+		<md-input-container>
+			<label>Where</label>
+			<input ng-model="where">
+		</md-input-container>
+
+		<md-input-container>
+			<label>When</label>
+			<input ng-model="when">
+		</md-input-container>
+
+		<md-input-container>
+			<label>Guests</label>
+			<input ng-model="guests">
+		</md-input-container>
+		<md-button ng-click="createEvent()">Create</md-button>
+	</div>
+	</md-content>
+</div> -->
+

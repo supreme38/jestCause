@@ -1,0 +1,27 @@
+<md-content class="md-padding">
+	<md-toolbar layout-align="center" layout="row">
+		<md-button>
+			<h1>Hang</h1>
+		</md-button>
+	</md-toolbar>
+	<div class="form">
+		<div class="md-inline-form" ng-cloak layout="column">
+			<md-content layout="column" class="md-padding">
+				<div layout="column" layout-align="center center">
+				<form id="login" ng-submit="signin()" layout="column">
+					<md-input-container>
+						<label>Email</label>
+						<input ng-model="user.email" ng-required="true">
+					</md-input-container>
+					<md-input-container>
+						<label>Password</label>
+						<input type = "password" ng-model="user.password" ng-required="true">
+					</md-input-container>
+					<md-button type="submit" class="md-raised md-primary" ng-click="signin()">Sign In</md-button>
+				</form>
+					<p>OR</p>
+					<md-button class="md-raised md-primary" ng-click="signuplink()">Sign Up</md-button>
+				</div>
+			</md-content>
+		</div>
+	</div>

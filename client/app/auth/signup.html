@@ -1,0 +1,31 @@
+<md-content class="md-padding">
+	<md-toolbar layout-align="center" layout="row">
+		<md-button>
+			Hang
+		</md-button>
+	</md-toolbar>
+	<div class="form">
+		<div class="md-inline-form" ng-cloak layout="column">
+			<md-content layout="column" class="md-padding">
+				<div layout="column" layout-align="center center">
+					<md-input-container>
+						<label>Name</label>
+						<input ng-model="user.name" ng-required="true">
+					</md-input-container>
+					<md-input-container>
+						<label>Email</label>
+						<input ng-model="user.email" ng-required="true">
+					</md-input-container>
+					<md-input-container>
+						<label>Password</label>
+						<input ng-model="user.password" ng-required="true">
+					</md-input-container>
+					<md-input-container>
+						<label>Profile URL Picture</label>
+						<input ng-model="user.profile_url" ng-required="true">
+					</md-input-container>
+					<md-button class="md-raised md-primary" ng-click="signup()">Sign Up</md-button>
+				</div>
+			</md-content>
+		</div>
+	</div>

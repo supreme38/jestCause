@@ -1,0 +1,32 @@
+<div ng-cloak>
+	<md-content class="md-padding">
+		<md-toolbar layout-align="space-between" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" layout="row">
+			<md-button ng-click="createEventClick($event)" name="createEvent">
+				Create Event
+			</md-button>
+			<md-button ng-class="{'hang': user.hang}" ng-click="toggleHang()" name="hangButton" id="hangButton">
+				Hang
+			</md-button>
+			<div ng-include="'app/home/menu.html'"></div>
+		</md-toolbar>
+	</md-content>
+</div>
+<div style="margin-top: 50px" class="home" ng-cloak layout="column" layout-align="center center">
+	<div flex-gt-sm="50" flex>
+		<md-content flex layout-align="center center" class="md-padding">
+			<md-toolbar layout="row" class="md-hue-4">
+				<div class="md-toolbar-tools">
+					<span style="text-align: center">Users</span>
+				</div>
+			</md-toolbar>
+			<md-list flex>
+				<md-list-item layout="row" ng-repeat="item in users" ng-click="userEventAdd()" ng-class="{'userInvited': this.item.invited}">
+					<img ng-class="{'hang': item.hang}" ng-src={{item.profile_url}} class="md-avatar">
+					<div class="md-list-item-text">
+						<h3>{{item.email}}</h3>
+					</div>
+				</md-list-item>
+			</md-list>
+		</md-content>
+	</div>
+</div>

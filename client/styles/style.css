@@ -1,0 +1,35 @@
+/*h1 {
+	font-weight: bold;
+	color: tomato;
+}*/
+
+#test {
+	min-height: 200px;
+	min-width: 200px;
+}
+
+.hang {
+	color: tomato;
+	border: solid 5px;
+}
+
+#homeAvatar {
+	max-height: 75px;
+	max-width: 50px;
+}
+
+.userInvited {
+	color: tomato;
+}
+
+.settings {
+	top: 5px;
+}
+
+.form {
+	margin-top: 5%;
+}
+
+.container {
+	width: 300px;
+}

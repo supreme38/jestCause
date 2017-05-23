@@ -1,0 +1,26 @@
+<md-menu-bar ng-controller="HomeController">
+  <md-menu>
+    <md-button class="settings" ng-click="$mdMenu.open($event)">
+      <!--<img id="homeAvatar" src={{user.profile_url}}> -->
+      {{user.name}}
+<!-- <img class="md-avatar" ng-src="{{user.profile_url}}"> -->
+    </md-button>
+    <md-menu-content width="3">
+      <md-menu-item>
+        <md-button ng-click="toHome()">
+          Home
+        </md-button>
+      </md-menu-item>
+      <md-menu-item md-menu-origin md-menu-align-target>
+        <md-button ng-click="changeUrl($event)">
+          Change Profile URL
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ng-click="signout()">
+          Logout
+        </md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+</md-menu-bar>
