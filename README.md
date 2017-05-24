@@ -22,7 +22,7 @@ You can test a fully working live demo [here](http://hangnyc.herokuapp.com/#/sig
 ## Usage
 ```npm start```
 
-```open http://localhost:3000```
+```open http://localhost:8000```
 
 ## Built With
 | Front-End | Back-End | Authentication |
