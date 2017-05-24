@@ -25,8 +25,8 @@ You can test a fully working live demo [here](http://hangnyc.herokuapp.com/#/sig
 ```open http://localhost:8000```
 
 ## Built With
-|Front-End|Back-End|Authentication|
-|---------|--------|--------------|
+| Front-End | Back-End | Authentication |
+|-----------|----------|----------------|
 |[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)|[Node.js](https://nodejs.org/en)|[Passport](http://passportjs.org)|
 |[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)|[Express](https://expressjs.com)|[Bcrypt.js](https://github.com/kelektiv/node.bcrypt.js)
 |[AngularJS](https://angularjs.org)|[MySQL](https://www.mysql.com)|
